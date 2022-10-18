@@ -65,6 +65,7 @@ return require('packer').startup(function()
   use "sainnhe/gruvbox-material"
   use "joshdick/onedark.vim"
   use {'kaicataldo/material.vim', branch= 'main'}
+  use 'folke/tokyonight.nvim'
 
   -- GIT
   use "lewis6991/gitsigns.nvim"

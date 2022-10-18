@@ -4,18 +4,23 @@ vim.g.mapleader = " "
 
 -- THEMES
 
---Grubvox
+--Grubvox --
 --vim.g['gruvbox_material_background'] = 'hard'
 --vim.g['gruvbox_material_better_performance'] = 1
 --vim.cmd("colorscheme gruvbox-material")
 
--- OneDark
+-- OneDark --
 --vim.cmd("colorscheme onedark")
 
+-- Tokyonight --
+vim.cmd[[colorscheme tokyonight]]
+-- "moon", "storm" or "night"
+require("tokyonight").setup({style = "night"})
 
--- Material
-vim.g['material_theme_style'] = 'darker-community'
-vim.cmd("colorscheme material")
+-- Material --
+--vim.g['material_theme_style'] = 'darker-community'
+--vim.cmd("colorscheme material")
+
 
 -- SETTINGS 
 vim.o.number = true
@@ -116,7 +121,7 @@ vim.cmd([[
 ]])
 
 -- Autocmd
--- resaltar cuando se copia
+-- Highlight copied Text 
 vim.cmd [[
 augroup AuYank
     autocmd!

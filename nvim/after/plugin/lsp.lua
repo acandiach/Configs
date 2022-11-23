@@ -54,6 +54,10 @@ lspconfig.intelephense.setup {
     flags = lsp_flags,
 }
 
+lspconfig.cssls.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
 lspconfig.sumneko_lua.setup {
     on_attach = on_attach,
     flags = lsp_flags,
@@ -81,20 +85,24 @@ lspconfig.sumneko_lua.setup {
 lspconfig.pyright.setup {
     on_attach = on_attach,
     flags = lsp_flags,
-  settings = {
-	solargraph = {
-	diagnostics = false,
-	globals = {'vim', 'use'},
-	},
-	{
-	formatting = false
-	},
-	workspace = {
-	-- Make the server aware of Neovim runtime files
-	--library = vim.api.nvim_get_runtime_file("", true),
-	},
-},
 }
+
+
+lspconfig.emmet_ls.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+lspconfig.html.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+lspconfig.ruby_ls.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
 
 lspconfig.solargraph.setup {
     on_attach = on_attach,
@@ -134,4 +142,5 @@ lspconfig.tsserver.setup {
 
 },
 }
+
 

@@ -1,6 +1,5 @@
 
-
-require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
+require'nvim-tree'.setup {
   auto_reload_on_write = true,
   create_in_closed_folder = false,
   disable_netrw = false,
@@ -12,15 +11,22 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   open_on_setup_file = false,
   open_on_tab = false,
   sort_by = "name",
+  root_dirs = {},
+  prefer_startup_root = false,
+  sync_root_with_cwd = false,
   update_cwd = false,
   reload_on_bufenter = false,
   respect_buf_cwd = false,
+  on_attach = "disable",
+  remove_keymaps = false,
+  select_prompts = false,
   view = {
     adaptive_size = false,
+    centralize_selection = false,
     width = 30,
     --height = 30,
     hide_root_folder = false,
-    side = "left",
+    side = "right",
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
@@ -31,18 +37,35 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
         -- user mappings go here
       },
     },
+    float = {
+      enable = false,
+      quit_on_focus_loss = true,
+      open_win_config = {
+	relative = "editor",
+	border = "rounded",
+	width = 30,
+	height = 30,
+	row = 1,
+	col = 1,
+      },
+    },
   },
   renderer = {
     add_trailing = false,
     group_empty = false,
     highlight_git = false,
+    full_name = false,
     highlight_opened_files = "none",
     root_folder_modifier = ":~",
+    indent_width = 2,
     indent_markers = {
       enable = true,
+      inline_arrows = true,
       icons = {
         corner = "└ ",
         edge = "¦ ",
+	item = "│",
+        bottom = "─",
         none = "  ",
       },
     },
@@ -58,30 +81,31 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
         git = true,
       },
       glyphs = {
-        default = "",
-        symlink = "",
+        default = "",
+        symlink = "",
+	bookmark = "",
         folder = {
           arrow_closed = "",
           arrow_open = "",
-          default = "",
-          open = "",
+          default = "",
+          open = "",
           empty = "",
           empty_open = "",
-          symlink = "",
-          symlink_open = "",
+          symlink = "",
+          symlink_open = "",
         },
         git = {
-          unstaged = "✗",
-          staged = "✓",
+          unstaged = "",   --"", "", "", "", "", "綠",""
+          staged = "",     --"", "", "", "",""
           unmerged = "",
           renamed = "➜",
-          untracked = "★",
-          deleted = "",
+          untracked = "",  --"硫", " ",""
+          deleted = "ﮖ",    -- "ﮖ", "ﯰ", "", "",""
           ignored = "◌",
         },
       },
     },
-    special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+    special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "master.key" },
   },
   hijack_directories = {
     enable = true,
@@ -100,6 +124,11 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   diagnostics = {
     enable = false,
     show_on_dirs = false,
+    debounce_delay = 50,
+    severity = {
+        min = vim.diagnostic.severity.HINT,
+        max = vim.diagnostic.severity.ERROR
+      },
     icons = {
       hint = "",
       info = "",
@@ -112,9 +141,15 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     custom = {},
     exclude = {},
   },
+  filesystem_watchers = {
+    enable = true,
+    debounce_delay = 50,
+    ignore_dirs = {},
+  },
   git = {
     enable = true,
     ignore = true,
+    show_on_dirs = true,
     timeout = 400,
   },
   actions = {
@@ -126,6 +161,16 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     },
     expand_all = {
       max_folder_discovery = 300,
+      exclude = {},
+    },
+    file_popup = {
+      open_win_config = {
+        col = 1,
+        row = 1,
+        relative = "cursor",
+        border = "shadow",
+        style = "minimal",
+      },
     },
     open_file = {
       quit_on_open = true,
@@ -144,12 +189,22 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     },
   },
   trash = {
-    cmd = "trash",
+    cmd = "gio trash",
     require_confirm = true,
   },
   live_filter = {
     prefix = "[FILTER]: ",
     always_show_folders = true,
+  },
+  tab = {
+    sync = {
+      open = false,
+      close = false,
+      ignore = {},
+    },
+  },
+  notify = {
+    threshold = vim.log.levels.INFO,
   },
   log = {
     enable = false,
@@ -158,9 +213,12 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
       all = false,
       config = false,
       copy_paste = false,
+      dev = false,
       diagnostics = false,
       git = false,
       profile = false,
+      watcher = false,
     },
   },
-} -- END_DEFAULT_OPTS
+}
+

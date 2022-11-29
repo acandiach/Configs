@@ -2,59 +2,63 @@ require "plugins"
 
 vim.g.mapleader = " "
 
--- THEMES
+--------------------- THEMES -----------------------
 
---Grubvox --
+------Grubvox ------
 --vim.g['gruvbox_material_background'] = 'hard'
 --vim.g['gruvbox_material_better_performance'] = 1
 --vim.cmd("colorscheme gruvbox-material")
 
--- OneDark --
+------ OneDark ------
 --vim.cmd("colorscheme onedark")
 
--- Tokyonight --
+------ Tokyonight ------
 vim.cmd[[colorscheme tokyonight]]
 -- "moon", "storm" or "night"
 require("tokyonight").setup({style = "night"})
 
--- Material --
+----- Material ------
 --vim.g['material_theme_style'] = 'darker-community'
 --vim.cmd("colorscheme material")
 
-
--- SETTINGS 
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.numberwidth = 1
-vim.o.cursorline = true
+---------------------- SETTINGS ---------------------
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.numberwidth = 1
+vim.opt.cursorline = true
 vim.opt.autoindent = true
-vim.o.splitright = true
-vim.o.termguicolors = true
-vim.o.background = 'dark'
-vim.o.clipboard = 'unnamedplus'
-vim.o.fileencoding = "utf-8"                  -- the encoding written to a file
-vim.o.ignorecase = true                       -- ignore case in search patterns 
-vim.o.mouse = "a"                             -- allow the mouse to be used in neovim
-vim.o.showmode = false                        -- we don't need to see things like -- INSERT -- anymore
-vim.o.showtabline = 4                         -- always show tabs
-vim.o.smartcase = true                        -- smart case
-vim.o.smartindent = true
-vim.o.sw = 4
-vim.o.showcmd = true
-vim.o.ruler = true
-vim.o.showmatch = true
-vim.o.laststatus = 4
-vim.o.signcolumn = 'yes'
-vim.o.inccommand="split"
-vim.o.wrap = true
-vim.o.linebreak =true
-vim.o.colorcolumn = 120
+vim.opt.splitright = true
+vim.opt.termguicolors = true
+vim.opt.background = 'dark'
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
+vim.opt.ignorecase = true                       -- ignore case in search patterns 
+vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
+vim.opt.showmode = false                        -- we don't need to see things like -- INSERT -- anymore
+vim.opt.showtabline = 2                         -- always show tabs
+vim.opt.smartcase = true                        -- smart case
+vim.opt.smartindent = true
+vim.opt.sw = 2
+vim.opt.showcmd = true
+vim.opt.ruler = true
+vim.opt.showmatch = true
+vim.opt.laststatus = 2
+vim.opt.signcolumn = 'yes'
+vim.opt.inccommand="split"
+vim.opt.wrap = true
+vim.opt.linebreak =true
+--vim.opt.colorcolumn = 120
+vim.opt.list = true
 
+--for treesitter
 vim.opt.foldmethod="expr"
 vim.opt.foldexpr="nvim_treesitter#foldexpr()"
 
+--for nvim tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
--- KEYMAPS
+--------------------- KEYMAPS -----------------------
 
 -- Exit insert mode
 vim.keymap.set('i', 'jk', '<Esc>')
@@ -96,6 +100,10 @@ vim.keymap.set("n", "<down>", "<nop>")
 vim.keymap.set("n", "<left>", "<nop>")
 vim.keymap.set("n", "<right>", "<nop>")
 
+-- Indenting in visual mode
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
 -- Resize windows with arrows keys
 vim.keymap.set("n", "<right>", ":vertical resize -5<CR>")
 vim.keymap.set("n", "<left>", ":vertical resize +5<CR>")
@@ -120,7 +128,7 @@ vim.cmd([[
     " let g:VM_mouse_mappings = 1
 ]])
 
--- Autocmd
+------ Autocmd ---------
 -- Highlight copied Text 
 vim.cmd [[
 augroup AuYank
@@ -129,6 +137,4 @@ augroup AuYank
 	\ lua vim.highlight.on_yank{higroup = "IncSearch", timeout = 400, on_visual = true}
 augroup END
 ]]
-
-
 

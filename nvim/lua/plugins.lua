@@ -82,6 +82,7 @@ return require('packer').startup(function()
 
   -- Autocomplete Parentheses and Quotes
   use 'jiangmiao/auto-pairs'
+  use 'alvan/vim-closetag'
 
   -- Place Quotes and Parentheses to selected text 
   use "tpope/vim-surround"

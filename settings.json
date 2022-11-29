@@ -1,0 +1,121 @@
+{
+     /* configuraciones del editor */
+    "workbench.colorTheme": "Monokai Night",
+    "window.zoomLevel": 1,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.sideBar.location": "right",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
+    "editor.guides.bracketPairs": true,
+    "editor.autoClosingBrackets": "always",
+    "editor.guides.bracketPairsHorizontal": true,
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.wordWrap": "on",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "editor.fontSize": 16,
+    "editor.fontWeight": 200,
+    "editor.tabSize": 2,
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "relative",
+
+    // configuracion terimnal integrado
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.fontFamily": "'CodeNewRoman Nerd Font'",
+    "terminal.integrated.fontSize": 15,
+    "terminal.external.linuxExec": "kitty",
+
+    /* configuration tabnine */
+    "tabnine.experimentalAutoImports": true,
+
+    /* configuration screencastMode for show keys touch */
+    /* para activar escribe en el buscador screencastMode */
+    "screencastMode.fontSize": 20,
+    "screencastMode.verticalOffset": 3,
+    "breadcrumbs.enabled": false,
+
+    // --------------- configuration Vim --------------------
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+
+    /* colors statusBar */
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": "#65666B",
+    "vim.statusBarColors.visualblock": "#86592d",
+    "vim.statusBarColors.visual": "#86592d",
+    "vim.statusBarColors.visualline": "#86592d",
+    "vim.statusBarColors.insert": "#005f5f",
+    "vim.statusBarColors.replace": "#2B5DD0",
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+	{
+	  "before": ["<leader>", "0"],
+	  "after": ["$"]
+	},
+	{
+	  "before": ["<leader>", "c", "c"],
+	  "after": ["g", "c", "c"]
+	},
+	{
+	  "before": ["<leader>", "p"],
+	  "after": ["^"]
+	},
+	{
+	  "before": ["<leader>", "r"],
+	  "commands": [":nohl"]
+	},
+	{
+	  "before": ["<leader>", "w"],
+	  "commands": [":w"]
+	},
+	{
+	  "before": ["<leader>", "q"],
+	  "commands": [":q"]
+	},
+	],
+    "vim.insertModeKeyBindings": [
+	{
+	  "before": ["j", "k"],
+	  "after": ["<esc>"]
+	}
+    ],
+    "vim.visualModeKeyBindings": [
+	{
+	  "before": ["<leader>", "c", "c"],
+	  "after": ["g", "c",	"c"]
+	},
+    ],
+    "vim.handleKeys": {
+	"<C-d>": false,
+	"<C-s>": false,
+	"<C-z>": false
+    },
+
+    // ------------- configuration for work with rails -----------------
+    "files.associations": {
+	"*.html.erb": "erb"
+    },
+
+    "emmet.includeLanguages": {
+	"ruby": "html",
+	"erb": "html",
+    },
+
+    "workbench.colorCustomizations": {
+	"statusBar.background": "#86592d",
+	"statusBar.noFolderBackground": "#86592d",
+	"statusBar.debuggingBackground": "#86592d"
+    },
+
+    // ----------- configuration code-runner --------------
+    "code-runner.showExecutionMessage": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+	"python": "/usr/bin/python3"
+    },
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": false,
+
+}

@@ -24,23 +24,29 @@ require("tokyonight").setup({style = "night"})
 ---------------------- SETTINGS ---------------------
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.ruler = true
 vim.opt.numberwidth = 1
-vim.opt.cursorline = true
+
 vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.showtabline = 2                         -- always show tabs
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
+
+vim.opt.ignorecase = true                       -- ignore case in search patterns 
+vim.opt.smartcase = true                        -- smart case
+vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
+
+vim.opt.cursorline = true
 vim.opt.splitright = true
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
-vim.opt.ignorecase = true                       -- ignore case in search patterns 
-vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
 vim.opt.showmode = false                        -- we don't need to see things like -- INSERT -- anymore
-vim.opt.showtabline = 2                         -- always show tabs
-vim.opt.smartcase = true                        -- smart case
-vim.opt.smartindent = true
 vim.opt.sw = 2
 vim.opt.showcmd = true
-vim.opt.ruler = true
 vim.opt.showmatch = true
 vim.opt.laststatus = 2
 vim.opt.signcolumn = 'yes'

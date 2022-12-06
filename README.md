@@ -73,7 +73,12 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 ```
 
-Now the next time you enter zsh it will show you the configuration
+Now the next time you enter zsh it will show you the configuration.
+
+If you want to reconfigure powerlevel10k run.
+```bash
+p10k configure
+```
 
 If you want to change the default shell to zsh
 ```bash

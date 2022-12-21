@@ -22,6 +22,7 @@ require("tokyonight").setup({style = "night"})
 --vim.cmd("colorscheme material")
 
 ---------------------- SETTINGS ---------------------
+--vim.opt.guicursor = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = true
@@ -29,14 +30,15 @@ vim.opt.numberwidth = 1
 
 vim.opt.autoindent = true
 vim.opt.smartindent = true
-vim.opt.showtabline = 2                         -- always show tabs
+
+vim.opt.showtabline = 2             -- always show tabs
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
-vim.opt.ignorecase = true                       -- ignore case in search patterns 
-vim.opt.smartcase = true                        -- smart case
-vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
+vim.opt.smartcase = true            -- smart case
+vim.opt.mouse = "a"                 -- allow the mouse to be used in neovim
 
 vim.opt.cursorline = true
 vim.opt.splitright = true
@@ -45,22 +47,32 @@ vim.opt.background = 'dark'
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
 vim.opt.showmode = false                        -- we don't need to see things like -- INSERT -- anymore
-vim.opt.sw = 2
 vim.opt.showcmd = true
 vim.opt.showmatch = true
 vim.opt.laststatus = 2
-vim.opt.signcolumn = 'yes'
 vim.opt.inccommand="split"
+
 vim.opt.wrap = true
 vim.opt.linebreak =true
---vim.opt.colorcolumn = 120
+
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = 'yes'
+vim.opt.colorcolumn = "120"
 vim.opt.list = true
+vim.opt.updatetime = 50
 
---for treesitter
-vim.opt.foldmethod="expr"
-vim.opt.foldexpr="nvim_treesitter#foldexpr()"
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.ignorecase = true           -- ignore case in search patterns 
 
---for nvim tree
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
+--For treesitter
+--vim.opt.foldmethod="expr"
+--vim.opt.foldexpr="nvim_treesitter#foldexpr()"
+
+--For nvim tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -93,6 +105,10 @@ vim.keymap.set("n", "<A-k>", "<Esc>:m .-2<CR>==")
 vim.keymap.set("v", "p", '"_dP')
 vim.keymap.set("v", "<A-j>", ":m .+1<CR>==")
 vim.keymap.set("v", "<A-k>", ":m .-2<CR>==")
+
+--Move text up and down visula mode but Indenting
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Move With Tmux-navigator
 vim.keymap.set("n", '<C-h>', ":TmuxNavigateLeft<CR>")

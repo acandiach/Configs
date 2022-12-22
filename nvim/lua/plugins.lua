@@ -29,6 +29,7 @@ vim.cmd([[
     -- Colors
     use 'norcalli/nvim-colorizer.lua'
 
+    --Autocomplete with LSP
     use {
       'VonHeikemen/lsp-zero.nvim',
       requires = {

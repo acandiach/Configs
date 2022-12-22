@@ -16,7 +16,7 @@ local colors = {            --colores por defecto
 }
 local mode = {
   function()
-    return " "  --' ', " ", ' ', ' ', ' ', ' '
+    return " "  --' ', " ", ' ', ' ', ' ', ' '
   end,
   color = function()
       -- auto change color according to neovims mode

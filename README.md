@@ -52,7 +52,7 @@ Make sure to select the font you downloaded in your terminal
 
 >Enter the cloned repository directory and copy the *nvim* directory to the configuration directory
 ```bash
-cp -r nvim/ .config/
+cp -r nvim/ ~/.config/
 ```
 >Go to nvim directory and run init.lua
 ```bash

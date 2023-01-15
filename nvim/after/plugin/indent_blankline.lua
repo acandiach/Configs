@@ -11,6 +11,10 @@ require("indent_blankline").setup {
     space_char_blankline = " ",
     show_current_context = true,
     show_current_context_start = true,
+    use_treesitter = true,
+    max_indent_increase = 1,
+    show_first_indent_level = true,
+    show_trailing_blankline_indent = false,
     --buftype_exclude = {"terminal"},
     --context_patterns = {
 	--"class", "return", "function", "method", "^if", "^while", "jsx_element", "^for", "^object", "^table", "block", "else_clause", "jsx_self_closing_element", "try_statement", "catch_clause", "import_statement",
@@ -25,5 +29,4 @@ require("indent_blankline").setup {
         "IndentBlanklineIndent6",
     },
 }
-
 

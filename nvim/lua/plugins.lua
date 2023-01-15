@@ -13,16 +13,18 @@ vim.cmd([[
     use 'wbthomason/packer.nvim'
 
     use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+      'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                            , branch = '0.1.x',
-  requires = { {'nvim-lua/plenary.nvim'} }
+      requires = { {'nvim-lua/plenary.nvim'} }
     }
 
   -- Sintaxis
     use {
-  'nvim-treesitter/nvim-treesitter',
-  run = ':TSUpdate'
-  }
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+    }
+
+    --use 'sheerun/vim-polyglot'
 
     use "nvim-treesitter/playground"
 
@@ -69,8 +71,8 @@ vim.cmd([[
 
   -- Tree Navigation
     use {'kyazdani42/nvim-tree.lua',
-  requires = {'kyazdani42/nvim-web-devicons'}
-  }
+      requires = {'kyazdani42/nvim-web-devicons'}
+    }
 
   --Multicursor
   use {'mg979/vim-visual-multi', branch= 'master'}
@@ -90,9 +92,9 @@ vim.cmd([[
 
   -- Status Bar
     use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
   -- Vim Transparency
     --use 'tribela/vim-transparent'
@@ -109,9 +111,7 @@ vim.cmd([[
 
   -- Buffer Bar
     use {'akinsho/bufferline.nvim',
-  tag = "*", requires = 'kyazdani42/nvim-web-devicons'
-  }
-
+      tag = "*", requires = 'kyazdani42/nvim-web-devicons'
+    }
 end
 )
-

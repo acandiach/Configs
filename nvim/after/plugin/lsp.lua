@@ -11,19 +11,19 @@ lsp.ensure_installed({
 
 -- Fix Undefined global 'vim'
 lsp.configure('sumneko_lua', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim', 'use' }
-            }
-        },
-        workspace = {
-	        library = vim.api.nvim_get_runtime_file("", true),
-        },
-      telemetry = {
-        enable = false,
-      },
-    }
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim', 'use' }
+      }
+    },
+    workspace = {
+      library = vim.api.nvim_get_runtime_file("", true),
+    },
+    telemetry = {
+      enable = false,
+    },
+  }
 })
 
 local cmp = require('cmp')
@@ -31,7 +31,7 @@ local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  ['<CR>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
 })
 
@@ -40,24 +40,37 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
+--cmp.setup({
+  --enabled = true,
+  --preselect = cmp.PreselectMode.None,
+--})
+
 lsp.setup_nvim_cmp({
+  enabled = true,
+  preselect = cmp.PreselectMode.None,
   mapping = cmp_mappings,
   sources = {
     { name = 'nvim_lsp' },
     { name = 'cmp_tabnine' },
     { name = 'luasnip' },
     { name = 'buffer' },
-  }
+  },
 })
 
 lsp.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
+  suggest_lsp_servers = false,
+  setup_servers_on_start = false,
+  set_lsp_keymaps = true,
+  configure_diagnostics = true,
+  cmp_capabilities = true,
+  manage_nvim_cmp = true,
+  call_servers = 'local',
+  sign_icons = {
+    error = 'E',
+    warn = 'W',
+    hint = 'H',
+    info = 'I'
+  }
 })
 
 lsp.on_attach(function(client, bufnr)

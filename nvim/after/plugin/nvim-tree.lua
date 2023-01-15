@@ -230,4 +230,3 @@ require'nvim-tree'.setup {
     },
   },
 }
-

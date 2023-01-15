@@ -2,26 +2,27 @@ require "plugins"
 
 vim.g.mapleader = " "
 
---------------------- THEMES -----------------------
+-- THEMES
 
-------Grubvox ------
---vim.g['gruvbox_material_background'] = 'hard'
---vim.g['gruvbox_material_better_performance'] = 1
---vim.cmd("colorscheme gruvbox-material")
+------Grubvox Material------
+vim.g['gruvbox_material_background'] = 'hard'
+vim.g['gruvbox_material_better_performance'] = 1
+vim.g['gruvbox_material_cursor'] = 'auto'
+vim.cmd("colorscheme gruvbox-material")
 
 ------ OneDark ------
 --vim.cmd("colorscheme onedark")
 
 ------ Tokyonight ------
-vim.cmd[[colorscheme tokyonight]]
+--vim.cmd[[colorscheme tokyonight]]
 -- "moon", "storm" or "night"
-require("tokyonight").setup({style = "night"})
+--require("tokyonight").setup({style = "night"})
 
 ----- Material ------
 --vim.g['material_theme_style'] = 'darker-community'
 --vim.cmd("colorscheme material")
 
----------------------- SETTINGS ---------------------
+-- SETTINGS
 --vim.opt.guicursor = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -67,16 +68,15 @@ vim.opt.ignorecase = true           -- ignore case in search patterns
 
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
-
---For treesitter
+--for treesitter
 --vim.opt.foldmethod="expr"
 --vim.opt.foldexpr="nvim_treesitter#foldexpr()"
 
---For nvim tree
+--for nvim tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
---------------------- KEYMAPS -----------------------
+-- KEYMAPS
 
 -- Exit insert mode
 vim.keymap.set('i', 'jk', '<Esc>')
@@ -135,6 +135,9 @@ vim.keymap.set("n", "<down>", ":resize +5<CR>")
 -- Open Terminal new Tab
 vim.keymap.set("n", '<C-t>', ":vert:split<CR>:terminal<CR>")
 
+-- quit terminal mode
+--vim.cmd([[tnoremap <C-i> <c-\><c-n>]])
+
 -- Desactivate or Activate Transparenting
 vim.keymap.set("n", "<leader>ty", ":TransparentToggle<CR>")
 
@@ -142,15 +145,27 @@ vim.keymap.set("n", "<leader>ty", ":TransparentToggle<CR>")
 vim.keymap.set("n", '<leader>j', "10j")
 vim.keymap.set("n", '<leader>k', "10k")
 
+--vim.keymap.set("n", '<C-i>', "<c-'\'><c-n>")
 -- For multicursor
+
+--Basic usage
+
+--select words with Ctrl-N (like Ctrl-d in Sublime Text/VS Code)
+--create cursors vertically with Ctrl-Down/Ctrl-Up
+--select one character at a time with Shift-Arrows
+--press n/N to get next/previous occurrence
+--press [/] to select next/previous cursor
+--press q to skip current and get next occurrence
+--press Q to remove current cursor/selection
+
 vim.cmd([[
     let g:VM_maps = {}
     let g:VM_maps['Find Under']         = '<C-s>'  " replace C-s
     let g:VM_maps['Find Subword Under'] = '<C-s>'  " replace visual C-s
-    " let g:VM_mouse_mappings = 1
+    let g:VM_mouse_mappings = 1
 ]])
 
------- Autocmd ---------
+-- Autocmd
 -- Highlight copied Text 
 vim.cmd [[
 augroup AuYank

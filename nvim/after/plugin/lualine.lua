@@ -1,4 +1,3 @@
-
 -- TEMA POR DEFECTO (modificado)
 
 local colors = {            --colores por defecto
@@ -16,13 +15,16 @@ local colors = {            --colores por defecto
 }
 local mode = {
   function()
-    return " "  --' ', " ", ' ', ' ', ' ', ' '
+    return " "  --' ', " ", ' ', ' ', ' '
   end,
   color = function()
-      -- auto change color according to neovims mode
+      --- auto change color according to neovims mode
     local mode_color = {
+      --- All modes with one color
       n, i, v, V, c, no, s, S, ic, R, Rv, cv, ce,
       r, rm, t = colors.darkblue
+
+      --- One color for each mode
 
       --n = colors.red,
       --i = colors.green,
@@ -56,7 +58,7 @@ require('lualine').setup {
 
   options = {
     icons_enabled = true,
-    theme = 'onedark',
+    theme = 'auto',
     component_separators = '',
     --section_separators = { left = '', right = '' },
 
@@ -65,7 +67,7 @@ require('lualine').setup {
     --component_separators = { left = '', right = ''},
     --section_separators = { left = '', right = ''},
 
-    disabled_filetypes = {'NvimTree'},
+    disabled_filetypes = {'NvimTree', 'undotree', 'diff'},
     always_divide_middle = true,
     globalstatus = false,
   },
@@ -90,5 +92,4 @@ require('lualine').setup {
   tabline = {},
   extensions = {}
 }
-
 

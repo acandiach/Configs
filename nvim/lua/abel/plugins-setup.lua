@@ -104,8 +104,9 @@ return packer.startup(function(use)
 
 	-- Themes
 	use("sainnhe/gruvbox-material")
-	use("joshdick/onedark.vim")
+	-- use("joshdick/onedark.vim")
 	use("folke/tokyonight.nvim")
+	use("navarasu/onedark.nvim")
 
 	-- Vim Transparency
 	--use 'tribela/vim-transparent'
@@ -117,6 +118,7 @@ return packer.startup(function(use)
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") -- snippet engine
+  -- use({"l3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*", run = "make install_jsregexp"})
 	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
 	use("rafamadriz/friendly-snippets") -- useful snippets
 

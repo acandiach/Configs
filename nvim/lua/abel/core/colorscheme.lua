@@ -1,5 +1,5 @@
 -- in case it isn't installed
-local status, _ = pcall(vim.cmd, "colorscheme tokyonight")
+local status, _ = pcall(vim.cmd, "colorscheme onedark")
 if not status then
 	print("Colorscheme not found!") -- print error if colorscheme not installed
 	return
@@ -18,3 +18,11 @@ end
 --vim.cmd[[colorscheme tokyonight]]
 -- "moon", "storm" or "night"
 -- require("tokyonight").setup({ style = "night" })
+
+------ OneDark navarasu------
+-- vim.cmd("colorscheme onedark")
+-- darker, warmer, dee-- Lua
+require("onedark").setup({
+	style = "warmer", -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+})
+require("onedark").load()

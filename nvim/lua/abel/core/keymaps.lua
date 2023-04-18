@@ -23,19 +23,19 @@ vim.keymap.set("n", "<S-l>", ":bn<CR>")
 vim.keymap.set("n", "<S-d>", ":bdelete<CR>")
 
 -- Move text up and down normal mode
-vim.keymap.set("n", "<A-j>", "<Esc>:m .+1<CR>==")
-vim.keymap.set("n", "<A-k>", "<Esc>:m .-2<CR>==")
+-- vim.keymap.set("n", "<A-j>", "<Esc>:m .+1<CR>==")
+-- vim.keymap.set("n", "<A-k>", "<Esc>:m .-2<CR>==")
 
 -- Move text up and down visual mode
-vim.keymap.set("v", "p", '"_dP')
-vim.keymap.set("v", "<A-j>", ":m .+1<CR>==")
-vim.keymap.set("v", "<A-k>", ":m .-2<CR>==")
+-- vim.keymap.set("v", "p", '"_dP')
+-- vim.keymap.set("v", "<A-j>", ":m .+1<CR>==")
+-- vim.keymap.set("v", "<A-k>", ":m .-2<CR>==")
 
 --Move text up and down visula mode but Indenting
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- Open Terminal new Tab
+-- Open vertical Terminal
 vim.keymap.set("n", "<C-t>", ":vert:split<CR>:terminal<CR>")
 -- quit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
@@ -64,7 +64,7 @@ vim.keymap.set("n", "<leader>j", "10j")
 vim.keymap.set("n", "<leader>k", "10k")
 
 ----------------------
--- Plugin Keybinds
+-- Plugins Keybinds
 ----------------------
 
 -- vim-maximizer
@@ -108,10 +108,10 @@ vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>")
 vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>")
 
 -- Move With Tmux-navigator
-vim.keymap.set("n", "<C-h>", ":TmuxNavigateLeft<CR>")
-vim.keymap.set("n", "<C-j>", ":TmuxNavigateDown<CR>")
-vim.keymap.set("n", "<C-k>", ":TmuxNavigateUp<CR>")
-vim.keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>")
+-- vim.keymap.set("n", "<C-h>", ":TmuxNavigateLeft<CR>")
+-- vim.keymap.set("n", "<C-j>", ":TmuxNavigateDown<CR>")
+-- vim.keymap.set("n", "<C-k>", ":TmuxNavigateUp<CR>")
+-- vim.keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>")
 
 -- For multicursor
 
